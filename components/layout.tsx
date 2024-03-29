@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, CSSProperties } from 'react';
+import ClipLoader from 'react-spinners/ClipLoader'
 
 import { Analytics } from "@vercel/analytics/react"
 
@@ -18,25 +19,29 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
+// Define the CSS override for the spinner
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
+
+
 export function Layout({ children }: LayoutProps) {
   const [loaded, setLoaded] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [color, setColor] = useState("#ffffff"); // You can set this to any color you prefer
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+  const handleVideoLoad = () => {
+    setVideoLoaded(true);
+  };
 
   useEffect(() => {
-    // Change the background color immediately when the component mounts
-    const element = document.getElementById('cuerpo');
-    if (element) {
-      element.style.background = '#b3a190';
-    }
-
-    // Set loaded state to true immediately
-    setLoaded(true);
-
     // Check if the code is running on the client side
     if (typeof window !== 'undefined') {
       setIsSmallScreen(window.innerWidth <= 640);
@@ -55,7 +60,20 @@ export function Layout({ children }: LayoutProps) {
   }, []);
 
   return (
-    <div id="cuerpo" className={`transition-opacity duration-1000 ease-in-out ${loaded ? 'opacity-100' : 'opacity-0'}`} style={{background: loaded ? 'transparent' : '#b3a190'}}>
+    <div id="cuerpo" className={`transition-opacity duration-1000 ease-in-out ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      {!videoLoaded && (
+        <div className="sweet-loading">
+          {/* Spinner from react-spinners */}
+          <ClipLoader
+            color={color}
+            loading={!videoLoaded}
+            cssOverride={override}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      )}
       <div className="opacity-100" style={{ display: "flex", flexDirection: "column", minHeight: "100vh"}}>
         <div
           className=""
@@ -69,21 +87,22 @@ export function Layout({ children }: LayoutProps) {
           }}
         >
           <video 
-        id="myVideo"
-        preload='auto'
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
-      >
-        <source src={isSmallScreen ? "/nuevo_loop.mp4" : "/nuevo_loop.mp4"} type="video/mp4" />
-        Oops, tu navegador...uhm...
-      </video>
+          id="myVideo"
+          preload='auto'
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+          onLoadedData={handleVideoLoad}
+        >
+          <source src={isSmallScreen ? "/nuevo_loop.mp4" : "/nuevo_loop.mp4"} type="video/mp4" />
+          Oops, tu navegador...uhm...
+        </video>
         </div>
         <div
           style={{

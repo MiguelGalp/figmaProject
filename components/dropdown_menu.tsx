@@ -97,17 +97,18 @@ const CustomHoverCardContent = ({ children, ...props }) => {
       if (window.matchMedia("(max-width: 1280px)").matches) {
         setSide("right");
         setSideOffset(-25);
-        setTransform("translateY(120px)");
+        setTransform("translateY(100px)");
         setStyle({
           backdropFilter: "blur(5px)",
           backgroundColor: "rgba(255, 255, 255, 0.7)"
         });
       } else {
         setSide("bottom");
-        setSideOffset(0);
-        setTransform("");
+        setSideOffset(-30);
+        setTransform("translateX(125px)");
         setStyle({
-          marginLeft: "100px"
+          backdropFilter: "blur(5px)",
+          backgroundColor: "rgba(255, 255, 255, 0.7)"
         });
       }
     };
@@ -277,16 +278,16 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
 
                                 <CustomHoverCard>
                                   <HoverCardTrigger className="hover:brightness-0">
-                                    <div className="opacity-85 text-sm p-6 relative right-6 bottom-4 md:hover:opacity-50">
+                                    <div className="opacity-85 text-sm px-10 py-6 relative right-10 bottom-4 md:hover:opacity-50">
                                       <Link href={"https://www.atlanticx.org"} className="md:hidden">
                                         <button className="w-full h-full">Ver más</button>
                                       </Link>
                                       <span className="hidden md:block">Ver más</span>
                                     </div>
                                   </HoverCardTrigger>
-                                  <CustomHoverCardContent className="flex space-x-4 w-[500px] rounded-md p-4 bg-white/75 shadow-md">
+                                  <CustomHoverCardContent className="flex space-x-3 w-[550px] rounded-md px-3 py-2 bg-white/75 shadow-md">
                                     {/* Left Column */}
-                                    <div className="flex flex-col justify-between space-y-4 w-1/2">
+                                    <div className="flex flex-col justify-between space-y-3 w-full">
                                       <Avatar className="hidden">
                                         <AvatarImage src="/ATX_AVATAR.png" />
                                         <AvatarFallback>ATX</AvatarFallback>
@@ -298,13 +299,7 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                           </Link>
                                         </h4>
                                         <p className="mb-2 text-base font-bold leading-4 text-black">
-                                          Como Lead Web Developer de la ONG Atlanticx, realicé el plan y la ejecución de la nueva web.
-                                          <span className="block mt-2">
-                                            El diseño fue en colaboración, junto a{" "}
-                                            <Link href={"https://ar.pinterest.com/doncorbi/"} target="_blank">
-                                              <u>@DonCorbi.</u></Link> La página integra el front a GitHub y permite el trackeo de versiones colaborativas persistentes.
-
-                                          </span>
+                                          Lead Web Developer de Atlanticx. Plan y ejecución de una app que permite la edición "live" y versiones persistentes en GitHub.
                                         </p>
                                         <div className="flex items-center pt-1">
                                           <CalendarDays className="mr-2 h-3 w-3 opacity-70" />{" "}
@@ -315,7 +310,7 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                       </div>
                                     </div>
                                     {/* Right Column */}
-                                    <div className="flex flex-col items-center justify-center w-1/2">
+                                    <div className="flex flex-col items-center justify-center w-2/3 -mt-5 scale-120">
                                       {imageLoading ? (
                                         <div className="flex h-32 items-center justify-center">
                                           <ClipLoader />
@@ -323,10 +318,10 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                       ) : (
                                         <Link href={"https://atlanticx.org"} target="_blank">
                                           <Image
-                                            src="/Web_Atx.png"
+                                            src="/ATX_AVATAR.png"
                                             alt="Portada ATX"
-                                            width={500} // adjust as needed
-                                            height={500} // adjust as needed
+                                            width={100} // adjust as needed
+                                            height={100} // adjust as needed
                                             objectFit="cover"
                                             className="rounded-md mt-8"
                                             priority
@@ -358,11 +353,11 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                     </div>
                                   </HoverCardTrigger>
                                   <CustomHoverCardContent2
-                                    className="w-[550px] rounded-md p-4 shadow-md"
+                                    className="w-[450px] rounded-md px-2 py-2 shadow-md"
                                   >
                                     <div className="flex space-x-6 p-4">
                                       {/* Left Column */}
-                                      <div className="flex flex-col justify-between space-y-4 w-1/2">
+                                      <div className="flex flex-col justify-between space-y-4 w-full">
                                         <div className="space-y-2">
                                           <h4 className="text-sm text-sm opacity-75">
                                             <Link href={"https://twitter-temperature.onrender.com/"} target="_blank">
@@ -375,11 +370,8 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                               {" "}
                                               <i>El Opio de los Pueblos</i>
                                             </Link>{" "}
-                                            será lanzado próximamente en{" "}
-                                            <Link href={"https://frontend.cafe/"} target="_blank">
-                                              <u>Frontend Café </u></Link>como un proyecto OSS con el objetivo generar métricas de
-                                            Twitter/X, en tiempo real y desde categorías LDA (Latent
-                                            Dirichlet allocation).
+                                            es un proyecto OSS que genera métricas de
+                                            Twitter/X.
 
                                           </p>
                                           <div className="flex items-center">
@@ -399,10 +391,10 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                             <Image
                                               src="/Avatar_Negro.png"
                                               alt="Portada ATX"
-                                              width={500} // adjust as needed
-                                              height={500} // adjust as needed
+                                              width={100} // adjust as needed
+                                              height={100} // adjust as needed
                                               objectFit="cover"
-                                              className="rounded-md mt-4"
+                                              className="rounded-md mt-6"
                                               loading="eager"
                                               onLoad={() => setImageLoading(false)}
                                             />
@@ -458,7 +450,7 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                               title="SuperUber (Brasil)"
                               className="pointer-events-none space-y-2 p-5 -mt-10 font-bold"
                             >
-                              <i>Túnel da Light</i> es un desarrollo de sonido espacial en 6 canales. Está integrado a Unity para trackear hasta 5 usuarios en simultáneo de manera que el sonido siga al visitante.
+                              <i>Túnel da Light</i>: Unity + SuperCollider trackean hasta 5 usuarios en simultáneo.
 
                             </CustomListItem>
                             <ListItem
@@ -466,7 +458,7 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                               title="Teatro Colón (CETC, Argentina)"
                               className="pointer-events-none space-y-2 p-5 -mt-10 font-bold"
                             >
-                              Como director del espacio, lideré durante más de 10 años a los equipos técnicos y artísticos en el Centro de Experimentación del Teatro Colón (CETC).
+                              Lideré más de 10 años a equipos artísticos y técnicos en el Teatro Colón (CETC).
                             </ListItem>
                           </ul>
                         </NavigationMenuContent>

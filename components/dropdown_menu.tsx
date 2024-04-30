@@ -301,7 +301,7 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                                         <p className="mb-2 text-base font-bold leading-4 text-black">
                                           Lead Web Developer de Atlanticx. Plan y ejecución de una app que permite la edición "live" y versiones persistentes en GitHub.
                                         </p>
-                                        <div className="flex items-center pt-1">
+                                        <div className="flex items-center pt-1 pb-4">
                                           <CalendarDays className="mr-2 h-3 w-3 opacity-70" />{" "}
                                           <span className="text-muted-foreground text-xs mt-[0.5px]">
                                             Diciembre 2023
@@ -496,6 +496,35 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
 
 
                             </li>
+                          </ul>
+                        </NavigationMenuContent>
+                      </NavigationMenuItem>
+                    </NavigationMenuList>
+                  </CustomNavigationMenu>
+                </DropdownMenuItem>
+              </DropdownMenuSubContent>
+            </DropdownMenuPortal>
+          </DropdownMenuSub>
+        </DropdownMenuGroup>
+        <DropdownMenuGroup className="hidden md:block">
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>
+              <span className="font-bold">Más...</span>
+            </DropdownMenuSubTrigger>
+            <DropdownMenuPortal>
+              <DropdownMenuSubContent className="overflow-visible">
+                <DropdownMenuItem className="overflow-visible">
+                  <CustomNavigationMenu open={true}>
+                    <NavigationMenuList>
+                      <NavigationMenuItem className="overflow-visible">
+                        <NavigationMenuTrigger className="text-black font-bold">
+                         Sobre Miguel, sus intereses.
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent className="overflow-visible p-6">
+                          <ul className=" md:w-[300px] lg:w-[300px]">
+
+                            <li className="text-base text-black font-bold">Originalmente académico, un "nerd", y alguien que trabaja entre las cosas, casi siempre experimentales.</li>
+                            <li className="text-base text-slate-100 font-bold bg-black mt-4 p-5 rounded-md">"Mi foco está puesto en generar, accesibilizar y abogar por más relaciones entre los datos y los artistas."</li>
                           </ul>
                         </NavigationMenuContent>
                       </NavigationMenuItem>

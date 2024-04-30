@@ -520,11 +520,11 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                         <NavigationMenuTrigger className="text-black font-bold">
                          Sobre Miguel, sus intereses.
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="overflow-visible p-6">
+                        <NavigationMenuContent className="overflow-visible p-4">
                           <ul className=" md:w-[300px] lg:w-[300px]">
 
-                            <li className="text-base text-black font-bold">Originalmente académico, un "nerd", y alguien que trabaja en el espacio ENTRE las cosas, casi siempre experimentales.</li>
-                            <li className="text-base text-slate-100 font-bold bg-black mt-4 p-5 rounded-md">"Mi foco está puesto en generar, accesibilizar y abogar por más relaciones entre los datos y los artistas."</li>
+                            <li className="text-base text-black font-bold">Originalmente académico, Miguel trabaja actualmente en el espacio entre la tecnología, la gestión y las artes.</li>
+                            <li className="text-base text-slate-100 font-bold bg-black mt-4 p-6 rounded-md">"Mi foco está en generar datos, analizarlos y accesibilizarlos para acercar las artes a la realidad."</li>
                           </ul>
                         </NavigationMenuContent>
                       </NavigationMenuItem>

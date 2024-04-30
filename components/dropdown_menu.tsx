@@ -523,7 +523,7 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                         <NavigationMenuContent className="overflow-visible p-6">
                           <ul className=" md:w-[300px] lg:w-[300px]">
 
-                            <li className="text-base text-black font-bold">Originalmente académico, un "nerd", y alguien que trabaja entre las cosas, casi siempre experimentales.</li>
+                            <li className="text-base text-black font-bold">Originalmente académico, un "nerd", y alguien que trabaja en el espacio entre las cosas, casi siempre experimentales.</li>
                             <li className="text-base text-slate-100 font-bold bg-black mt-4 p-5 rounded-md">"Mi foco está puesto en generar, accesibilizar y abogar por más relaciones entre los datos y los artistas."</li>
                           </ul>
                         </NavigationMenuContent>

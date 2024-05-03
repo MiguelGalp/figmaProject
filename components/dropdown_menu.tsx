@@ -523,8 +523,8 @@ export function Dropdown_menu({ toggleDropdown, isDropdownOpen }) {
                         <NavigationMenuContent className="overflow-visible p-4">
                           <ul className=" md:w-[300px] lg:w-[300px]">
 
-                            <li className="text-base text-black font-bold ml-3">Originalmente académico, Miguel trabaja actualmente en el espacio entre la tecnología, la gestión y las artes.</li>
-                            <li className="text-base text-slate-100 font-bold bg-black mt-4 p-6 rounded-md">"Mi foco está en generar datos, analizarlos y accesibilizarlos para acercar las artes a la realidad."</li>
+                            <li className="text-base text-black font-bold ml-3">Originalmente académico, Miguel trabaja hoy en el espacio entre la tecnología, la gestión y la cultura.</li>
+                            <li className="text-base text-slate-100 font-bold bg-black mt-4 p-6 rounded-md">"...espacios latentes para y en las artes...datos, proyectos y herramientas abiertas...gestión en alianzas desde ONGs"</li>
                           </ul>
                         </NavigationMenuContent>
                       </NavigationMenuItem>
